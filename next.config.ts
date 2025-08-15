@@ -1,6 +1,11 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
+  experimental: {
+    outputFileTracingIncludes: {
+      '/': ['./.next/server/app/(main)/**']
+    }
+  },
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
