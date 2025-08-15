@@ -3,7 +3,9 @@ node_modules
 *.log
 .env.local
 .env.development
+.env.test
+.env
 
-# Make sure build output is NOT ignored
+# Always include build output
 !.next/
-!app/(main)/
+!.next/server/app/(main)/
