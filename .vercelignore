@@ -1,0 +1,9 @@
+# Ignore junk files
+node_modules
+*.log
+.env.local
+.env.development
+
+# Make sure build output is NOT ignored
+!.next/
+!app/(main)/
