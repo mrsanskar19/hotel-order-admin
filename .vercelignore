@@ -1,4 +1,4 @@
-# Ignore junk files
+# Ignore junk
 node_modules
 *.log
 .env.local
@@ -9,3 +9,4 @@ node_modules
 # Always include build output
 !.next/
 !.next/server/app/(main)/
+! src/app/(main)
