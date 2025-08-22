@@ -5,7 +5,9 @@ export type MenuItem = {
   category: 'Appetizer' | 'Main Course' | 'Dessert' | 'Beverage';
   description: string;
   imageUrl: string;
+  imageHint: string;
   inStock: boolean;
+  customizable: boolean;
 };
 
 export type OrderItem = {

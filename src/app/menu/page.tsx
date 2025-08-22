@@ -3,10 +3,9 @@
 import * as React from 'react';
 import Image from 'next/image';
 import {
-  FilePlus,
   MoreHorizontal,
   PlusCircle,
-  Search,
+  Sparkles,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -135,6 +134,7 @@ export default function MenuPage() {
                   <TableHead>Category</TableHead>
                   <TableHead>In Stock</TableHead>
                   <TableHead className="hidden md:table-cell">Price</TableHead>
+                   <TableHead className="hidden md:table-cell">Details</TableHead>
                   <TableHead>
                     <span className="sr-only">Actions</span>
                   </TableHead>
@@ -150,7 +150,7 @@ export default function MenuPage() {
                         height="64"
                         src={item.imageUrl}
                         width="64"
-                        data-ai-hint="food dish"
+                        data-ai-hint={item.imageHint}
                       />
                     </TableCell>
                     <TableCell className="font-medium">{item.name}</TableCell>
@@ -165,6 +165,14 @@ export default function MenuPage() {
                     </TableCell>
                     <TableCell className="hidden md:table-cell">
                       ${item.price.toFixed(2)}
+                    </TableCell>
+                    <TableCell className="hidden md:table-cell">
+                        {item.customizable && (
+                            <Badge variant="secondary" className="whitespace-nowrap">
+                                <Sparkles className="mr-1 h-3 w-3" />
+                                Customizable
+                            </Badge>
+                        )}
                     </TableCell>
                     <TableCell>
                       <DropdownMenu>
